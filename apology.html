@@ -1,0 +1,131 @@
+<html>
+<head>
+    <title>Apology</title>  
+    <style>
+        body{
+            text-align:center;
+            margin: 150px ;
+            background: linear-gradient(135deg, #f7a0c8 0%, #ffffff 40%, #f7a0c8 75%, #fff7fa 100%);
+
+             
+       }
+        h1{
+            font-size: 50px;
+            color: rgb(141, 6, 69);
+        }
+        #nobtn{
+            font-size: 35px;
+        }
+        #yesbtn{
+            font-size: 35px;
+            color: white;
+            background-color: green;
+            border:none;
+            border-radius: 12px ;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
+        #nobtn{
+            font-size: 35px;
+            color: white;
+            background-color: red;
+            border:none;
+            border-radius: 12px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
+        .just{
+            margin:30px;
+            gap:30px;
+            display:flex;
+            justify-content: center;
+             
+        }
+    
+    </style>
+</head>
+    <body>
+        <h1> <b> Can you forgive me?💕</b></h1>
+        <img id="bear-gif" src="https://media.tenor.com/FZclYdjw3m4AAAAi/bubu-dudu-sseeyall.gif" alt="bear gif" width="150px">
+        </br>
+        <br>
+       <div  class="just ">
+         <input type="button" id="yesbtn" value="YES💖" onclick="growyes()">
+        <input type="button" id="nobtn" value="NO😤" onclick="shrinkno()" onmouseover="runbutton()">
+       </div>
+ <script>
+            var yesscale=1;
+            var noscale=1;
+            var clicks=0;
+
+            function growyes(){
+                if(clicks = 6){
+                    
+                
+                    document.getElementById("yesbtn").style.display = "none";
+                    document.getElementById("nobtn").style.display = "none";
+
+                    document.querySelector("h1").textContent = "yayyy! i knew you would forgive me💖✨🎉🥳 💃 ";
+                    document.getElementById("bear-gif").src ="https://media.tenor.com/cApar5ThqD4AAAAi/bubu-dudu-bubu-dudu-happy.gif";
+                    document.getElementById("bear-gif").style.transform = "scale(1.5)";
+                }
+            }
+
+    
+            function shrinkno(){
+                clicks++;
+                noscale -= 0.2;
+                if(noscale < 0.3) noscale = 0.3;
+                document.getElementById("nobtn").style.transform = "scale(" + noscale + ")";
+                
+                 
+                yesscale +=0.5;
+                document.getElementById("yesbtn").style.transform = "scale(" + yesscale + ")";
+                if(clicks==1){
+                    document.getElementById("nobtn").value = "are you positive?🤔";
+                    document.getElementById("bear-gif").src = "https://media.tenor.com/2JzCL69rAYoAAAAi/bubu-dudu-sseeyall.gif";
+                    
+                }
+                else if(clicks==2){
+                    document.getElementById("nobtn").value = "think again!💭"; 
+                    document.getElementById("bear-gif").src = "https://media.tenor.com/p3wTssf4xRgAAAAj/bubu-bubu-sad.gif";   
+                }
+                else if(clicks==3){
+                    document.getElementById("nobtn").value = "pookie please..👉👈";  
+                    document.getElementById("bear-gif").src = "https://media.tenor.com/qjKNkZZlF-4AAAAi/bubu-dudu-sseeyall.gif";
+            }
+                else if(clicks==4){
+                    document.getElementById("nobtn").value = "last chance...🙏";  
+                    document.getElementById("bear-gif").src = "https://media.tenor.com/EKrsFntSuSgAAAAi/sad.gif";
+                }
+                else if(clicks>=5){
+                    document.getElementById("nobtn").value = "pleaseee....💔 😭";  
+                    document.getElementById("bear-gif").src = "https://media.tenor.com/6iYbSNGPmvwAAAAi/bubu-crying-bubu-dudu.gif";
+                }
+                if(clicks >= 6){
+                    document.getElementById("nobtn").value = "catch me!🏃‍♂️💨";  
+                }
+            
+                 
+            }
+            
+            function runbutton(){
+                if(clicks >= 6){
+                   
+
+                    var btn =document.getElementById("nobtn");
+                    btn.style.position = "absolute";
+                    var x = Math.random() * (window.innerWidth - 100);
+                    var y = Math.random() * (window.innerHeight - 50);
+
+                    btn.style.top = y + "px";
+                    btn.style.left = x + "px";
+                }
+            }
+        
+        </script>
+
+    </body>
+</html>
